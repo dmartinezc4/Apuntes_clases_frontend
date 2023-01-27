@@ -1,0 +1,39 @@
+body{
+    background-color: #fabada;
+}
+
+
+.clickable{
+    cursor: pointer;
+}
+.button1{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.button1:hover{
+    
+    background-color: green;
+    color:white;
+}
+.button2{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button2:active{
+    
+    margin: 600px 500px;
+    
+}
