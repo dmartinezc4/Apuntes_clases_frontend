@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css"/>
+        <style>
+             
+        </style>
+        <title> Primerita pagina</title>
+
+        <script lang="javascript">
+            function saluda(){
+                window.alert("Holi")
+            }
+
+            document.onkeydown=function (event) {
+                switch (event.keyCode) {
+                    case 37:
+                        move_left()
+                    break;
+                    case 65://a
+                        move_left();
+                    break;
+                    case 38:
+                        move_up()
+                    break;
+                    case 87://w
+                        move_up();
+                    break;
+                    case 39:
+                    move_right()
+                    break;
+                    case 68://d
+                        move_right();
+                    break;
+                    case 40:
+                        move_down()
+                    break;
+                    case 83://s
+                        move_down()
+                    break;
+         }
+                
+                console.log(event.keyCode);
+            }
+
+            
+            function changebutton2(){
+                var button2 = document.getElementById("button2");
+                button2.innerText="Soy otro";
+                button2.style.background="#ff00aa"
+                button2.style.position="absolute"
+                button2.style.top= "200px"
+            }
+
+            function move_left(){
+                var pelota=document.getElementById("pelota");
+                var left=parseInt(pelota.style.left) || 2;
+                pelota.style.left= (left - 1) + "px";
+            }
+            function move_right(){
+                var pelota=document.getElementById("pelota");
+                var left=parseInt(pelota.style.left) || 2;
+                var borderright=left+45;
+                if(window.innerWidth<(borderright)){
+                    console.log("me paso")
+                    return;
+                }
+                pelota.style.left= (left + 1) + "px";
+            }
+            function move_up(){
+                var pelota=document.getElementById("pelota");
+                var top=parseInt(pelota.style.top) || 2;
+                pelota.style.top= (top - 1) + "px";
+            }
+            function move_down(){
+                var pelota=document.getElementById("pelota");
+                var top=parseInt(pelota.style.top) || 2;
+                var borderbottom=top+45;
+                if(window.innerHeight<(borderbottom)){
+                    return;
+                }
+                pelota.style.top= (top + 1) + "px";
+            }
+            function drop(){
+               var pelota=document.getElementById("pelota");
+               var top=parseInt(pelota.style.top) || 2;
+               pelota.style.top= (1 + top) + "px";
+               setTimeout(move, 50);
+            }
+        </script>
+
+    </head>
+    <body>
+        <div id="wrapper"></div>
+        <div id="pelota"></div>
+        <button id="button">clickame</button>
+
+            
+        
+    </body>
+
+</html>
