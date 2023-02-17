@@ -1,0 +1,19 @@
+body{
+  background-color: beige;
+  font-size: 18px;
+}
+
+a{
+  color: blue;
+}
+
+.Persona{
+  border: 1px black solid;
+  background-color: aquamarine;
+}
+
+.Menu{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
