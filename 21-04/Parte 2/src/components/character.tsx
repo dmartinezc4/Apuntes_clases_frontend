@@ -11,13 +11,9 @@ const Character:FC<{id:string}>=({id})=>{
     `
     
     const [charID,setCharID]= useState<string>(id);
-    useEffect(()=>{
-        refetch({
-            variables:{
-                id
-            }
-        })
-    },[charID])
+    
+    console.log("charid: ",charID);
+    console.log("id: ",id);
     
     const{loading,error,data, refetch}=useQuery<{
         character:{
@@ -26,7 +22,7 @@ const Character:FC<{id:string}>=({id})=>{
         }
     }>(query,{
         variables:{
-            id
+            id:charID
         }
     });
 
@@ -45,10 +41,12 @@ const Character:FC<{id:string}>=({id})=>{
         )
     }
     return(
+        
         <div>
             {data!.character.name}
             <input type="text" onChange={(e)=>setCharID(e.target.value)}/>
         </div>
+        
     )
 }
 
